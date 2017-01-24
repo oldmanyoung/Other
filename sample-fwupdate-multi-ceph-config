@@ -1,0 +1,40 @@
+# Use this flag use_http_secure to toggle betwwen https and http protocol
+use_http_secure=yes
+# Firmware update should complete within this many minutes. This value will be
+# sent along with the firmware update XML request to the CIMC
+update_timeout=60
+# Should the firmware update process stop the update once an error is encountered?
+update_stop_on_error=no
+# Is it required to verify the update by rebooting to the same HUU image after the update
+# gets completed?
+update_verify=no
+# Do you wish to secure Cimc Boot.Use this flag use_cimc_secure.
+use_cimc_secure=no
+# List of components to be updated. Check the HUU release note for the list of
+# supported components. Multiple components should be comma separated.
+#update_component=I350
+#update_component=9266-8i, BIOS, CIMC, I350
+update_component=all
+
+#reboot CIMC before Update
+reboot_cimc=no
+# IP address of the remoted share (cifs/nfs/www) holding the HUU image for booting
+remoteshareip=10.203.96.10
+# Directory within the share where the HUU image is being kept
+sharedirectory=/cobbler/pub
+# Type of share (nfs/cifs/www)
+sharetype=www
+# Username of the remote share to login to
+remoteshareuser=admin
+# Password corresponding to the remote user
+remotesharepassword=password
+
+# Password file for remoteshare. If this option is provided, then the above option (remotesharepassword) should not be given
+#remoteshare_passwordfile=/home/arunven/Python_Script/python_script_old/Pyrhon_loop/CRYPTO/remshare.pass
+
+#Common CIMC password --> The password provided below along with CIMC information will be ignored.
+#cimc_password_file=/home/arunven/Python_Script/python_script_old/Pyrhon_loop/CRYPTO/cimc.pass
+
+
+# Enter the list of CIMC ip addresses where the firmware needs to be updated
+address=10.203.249.228, user=admin, password=Nimbus123*, imagefile=ucs-c220m4-huu-2.0.9f.iso
